@@ -23,7 +23,7 @@ HAAR Cascades can also be used to identiy an area of interest for further proces
 
 1. <em>Stanford University Paper:</em> [Cascaded Classification Models: Combining Models for Holistic Scene Understanding](http://ai.stanford.edu/people/koller/Papers/Heitz+al:NIPS08a.pdf). Written by: <em>Geremy Heitz Stephen Gould Department of Electrical Engineering Stanford University, Ashutosh Saxena and Daphne Koller Department of Computer Science Stanford University.</em>
 
-2. <em>Article:</em> <strong>HAAR Wavelets explained</strong> in further detail with working examples as used in Facebook. [Face Detection Using OpenCV With Haar Cascade Classifiers](https://becominghuman.ai/face-detection-using-opencv-with-haar-cascade-classifiers-941dbb25177)
+2. <em>Article:</em> <strong>HAAR Wavelets</strong> explained in further detail with working examples as used in Facebook. [Face Detection Using OpenCV With Haar Cascade Classifiers](https://becominghuman.ai/face-detection-using-opencv-with-haar-cascade-classifiers-941dbb25177)
 
 --------------------------------------------------------------
  
