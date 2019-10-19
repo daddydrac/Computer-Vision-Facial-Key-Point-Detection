@@ -21,8 +21,10 @@ Then it then feeds this reduced image area to the next feature detector and clas
 <strong>Production Usage:</strong> HAAR Cascades can also be used to identiy an area of interest for further processing.
 
 <em>Paper</em> 
+
 [Cascaded Classification Models:
-Combining Models for Holistic Scene Understanding](http://ai.stanford.edu/people/koller/Papers/Heitz+al:NIPS08a.pdf) Geremy Written by Heitz Stephen Gould Department of Electrical Engineering Stanford University, Ashutosh Saxena and Daphne Koller Department of Computer Science Stanford University.
+Combining Models for Holistic Scene Understanding](http://ai.stanford.edu/people/koller/Papers/Heitz+al:NIPS08a.pdf)
+Written by: <em>Geremy Heitz Stephen Gould Department of Electrical Engineering Stanford University, Ashutosh Saxena and Daphne Koller Department of Computer Science Stanford University.</em>
 
 --------------------------------------------------------------
  
