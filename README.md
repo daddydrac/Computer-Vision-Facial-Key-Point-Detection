@@ -5,23 +5,23 @@
  
  #### How HAAR Feature Detection works with CNNs ####
  
-<p>Summary: HAAR Feature Detection is gradient measuments that look at rectangular regions. HAAR features detect patterns like edges lines and more complex rectangular patterns. The image below is an example of vertical, horizatonal and rectangle "Feature Detectors" or "Line Detectors":</p>
-
-<p>
-<img align="left" src="/app/facial-keypoint-detection/misc/haar-features.png" width="150" height="300" />
-</p>
-
-<p>So, it looks at an image and applies one of the Haar Feature Detectors, like vertical line detector, and then performs classification of the entire image, if it doesnt get enough of a feature response, it classifies it as "not" face, and discards that info:</p>
-
-<p>
-<img align="left" src="app/facial-keypoint-detection/misc/not-face.png" width="325" height="250" />
-</p>
+Summary: HAAR Feature Detection is gradient measuments that look at rectangular regions. HAAR features detect patterns like edges lines and more complex rectangular patterns. The image below is an example of vertical, horizatonal and rectangle "Feature Detectors" or "Line Detectors":
 
 
-<p>Then it then feeds this reduced image area to the next feature detector and classifies the image again, discarding irrelvant, or in this case, non-face areas at every step. This is called a cascade of classifiers.</p>
+ ![Image description](https://github.com/joehoeller/Computer-Vision-Facial-Key-Point-Detection/blob/master/app/facial-keypoint-detection/misc/haar-features.png)
 
 
-<p><strong>Production Usage:</strong> HAAR Cascades can also be used to identiy an area of interest for further processing.</p>
+So, it looks at an image and applies one of the Haar Feature Detectors, like vertical line detector, and then performs classification of the entire image, if it doesnt get enough of a feature response, it classifies it as "not" face, and discards that info:
+
+
+ ![HAAR Ferature Detection](https://github.com/joehoeller/Computer-Vision-Facial-Key-Point-Detection/blob/master/app/facial-keypoint-detection/misc/not-face.png)
+
+
+
+Then it then feeds this reduced image area to the next feature detector and classifies the image again, discarding irrelvant, or in this case, non-face areas at every step. This is called a cascade of classifiers.
+
+
+<strong>Production Usage:</strong> HAAR Cascades can also be used to identiy an area of interest for further processing.
 
  
  --------------------------------------------------------------
