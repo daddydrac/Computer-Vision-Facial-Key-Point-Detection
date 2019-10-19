@@ -21,14 +21,9 @@ Then it then feeds this reduced image area to the next feature detector and clas
 <strong>Production Usage:</strong> 
 HAAR Cascades can also be used to identiy an area of interest for further processing.
 
-<em>Paper:</em> 
-[Cascaded Classification Models:
-Combining Models for Holistic Scene Understanding](http://ai.stanford.edu/people/koller/Papers/Heitz+al:NIPS08a.pdf)
-<p>Written by: <em>Geremy Heitz Stephen Gould Department of Electrical Engineering Stanford University, Ashutosh Saxena and Daphne Koller Department of Computer Science Stanford University.</em></p>
+1. <em>Paper:</em> [Cascaded Classification Models: Combining Models for Holistic Scene Understanding](http://ai.stanford.edu/people/koller/Papers/Heitz+al:NIPS08a.pdf). Written by: <em>Geremy Heitz Stephen Gould Department of Electrical Engineering Stanford University, Ashutosh Saxena and Daphne Koller Department of Computer Science Stanford University.</em>
 
-<em>Article:</em>
-<p>HAAR Wavelets explained in further detail with working examples as used in Facebook.</p> 
-[Face Detection Using OpenCV With Haar Cascade Classifiers](https://becominghuman.ai/face-detection-using-opencv-with-haar-cascade-classifiers-941dbb25177)
+2. <em>Article:</em> HAAR Wavelets explained in further detail with working examples as used in Facebook. [Face Detection Using OpenCV With Haar Cascade Classifiers](https://becominghuman.ai/face-detection-using-opencv-with-haar-cascade-classifiers-941dbb25177)
 
 --------------------------------------------------------------
  
