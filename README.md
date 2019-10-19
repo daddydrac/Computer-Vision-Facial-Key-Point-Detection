@@ -8,13 +8,13 @@
 Summary: HAAR Feature Detection is gradient measuments that look at rectangular regions. HAAR features detect patterns like edges lines and more complex rectangular patterns. The image below is an example of vertical, horizatonal and rectangle "Feature Detectors" or "Line Detectors":
 
 <p style="display:table;">
-<img align="left" src="haar-features.png" width="100%" height="auto" />
+<img align="left" src="/app/facial-keypoint-detection/misc/haar-features.png" width="150" height="300" />
 </p>
 
 So, it looks at an image and applies one of the Haar Feature Detectors, like vertical line detector, and then performs classification of the entire image, if it doesnt get enough of a feature response, it classifies it as "not" face, and discards that info:
 
 <p style="display:table;">
-<img align="left" src="not-face.png" width="100%" height="auto" />
+<img align="left" src="app/facial-keypoint-detection/misc/not-face.png" width="200" height="300" />
 </p>
 
 
