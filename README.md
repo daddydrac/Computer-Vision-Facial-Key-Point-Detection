@@ -5,7 +5,7 @@ Facial Keypoint Detection Using Haar Cascades on a trained CNN: This project use
  
  #### How HAAR Feature Detection works with CNNs ####
  
-Summary: HAAR Feature Detection is gradient measuments that look at rectangular regions. HAAR features detect patterns like edges lines and more complex rectangular patterns. The image below is an example of vertical, horizatonal and rectangle "Feature Detectors" or "Line Detectors":
+Summary: HAAR Feature Detection is gradient measuments that look at rectangular regions. HAAR features detect patterns like edges lines and more complex rectangular patterns. The image below is an example of vertical, horizatonal and rectangle "HAAR Feature Detectors" or "HAAR Line Detectors":
 
  ![Image description](https://github.com/joehoeller/Computer-Vision-Facial-Key-Point-Detection/blob/master/app/facial-keypoint-detection/misc/haar-features.png)
 
