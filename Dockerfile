@@ -183,6 +183,8 @@ RUN cd ~ && \
     python3 setup.py install --yes USE_AVX_INSTRUCTIONS --yes DLIB_USE_CUDA --clean
 
 
+RUN conda install -c anaconda scikit-learn 
+
 WORKDIR /app
 EXPOSE 8888 
 
