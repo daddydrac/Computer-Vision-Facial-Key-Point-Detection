@@ -39,50 +39,49 @@ class Net(nn.Module):
         #############################################
         
         
-        self.conv = nn.Sequential(
+                self.conv1 = nn.Sequential(
             # Layer 1
             nn.Conv2d(
                 in_channels=1, 
                 out_channels=32, 
-                kernel_size=2, 
-                stride=1,
+                kernel_size=2,
             ),
-            nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),
-            nn.Dropout(0.1),
-            
+            nn.BatchNorm2d(32),
+            nn.ReLU(),
+        )
+        self.conv2 = nn.Sequential(    
             # Layer 2
             nn.Conv2d(
                 in_channels=32,
                 out_channels=64,
                 kernel_size=2, 
-                stride=1
             ),
-            nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),
-            nn.Dropout(0.2),
-            
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+        )
+        self.conv3 = nn.Sequential(    
             # Layer 3
             nn.Conv2d(
                 in_channels=64,
                 out_channels=128,
                 kernel_size=2, 
-                stride=1,
             ),
-            nn.ReLU(), 
             nn.MaxPool2d(kernel_size=2, stride=2),
-            nn.Dropout(0.3),
-                       
+            nn.BatchNorm2d(128),
+            nn.ReLU(), 
+        )
+        self.conv4 = nn.Sequential(              
             # Layer 4
              nn.Conv2d(
                 in_channels=128,
                 out_channels=256,
                 kernel_size=2, 
-                stride=1,
             ),
-            nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),
-            nn.Dropout(0.4),
+            nn.BatchNorm2d(256),
+            nn.ReLU(),
         )
         
         # Formula:     (W − F + 2*P ) / S + 1
@@ -105,41 +104,25 @@ class Net(nn.Module):
         
         # Formula:     (W − F + 2P ) / S + 1
         
-        self.fc = nn.Sequential(
-            
-             # FC Layer 1:
-             nn.Linear(43264, 432),
-             nn.ReLU(),
-             nn.Dropout(0.5),
-            
-             # FC Layer 2:
-             nn.Linear(432, 216),
-             nn.ReLU(),
-             nn.Dropout(0.5),
-            
-             # FC Layer 3:
-             nn.Linear(216, 108), # output of 136 as suggested by instructions from Udacity
-             nn.ReLU(),
-             nn.Dropout(0.6)
-         )
-
-        #I.xavier_uniform(self.fc.weight.data)
-
+        self.dropout = nn.Dropout(0.5)
         
-
+        self.fc1 = nn.Linear(43264, 512)
+        self.fc2 = nn.Linear(512, 256)
+        self.fc3 = nn.Linear(256, 136) # output of 136 is suggested by instructions from Udacity
+       
+        I.xavier_uniform(self.fc1.weight.data)
+        I.xavier_uniform(self.fc2.weight.data)
+        I.xavier_uniform(self.fc3.weight.data)
         
     def forward(self, x):
-        
-        
-        def flatten(t):
-            t = t.reshape(1, t.size()[0] * x)
-            t = t.squeeze()
-            return t
-        
-             
-        x = self.conv(x)
-        x = flatten(x)
-        x = self.fc(x)
-          
+        x = self.conv1(x)
+        x = self.conv2(x)
+        x = self.conv3(x)
+        x = self.conv4(x)
+        x = x.view(x.size(0), -1)
+        x = self.dropout(F.relu(self.fc1(x)))
+        x = self.dropout(F.relu(self.fc2(x)))
+        x = self.fc3(x)
         # a modified x, having gone through all the layers of your model, should be returned
         return x
+
