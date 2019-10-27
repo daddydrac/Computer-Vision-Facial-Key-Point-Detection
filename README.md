@@ -1,8 +1,17 @@
 ## Computer Vision: Facial Key Point Detection ##
-Facial Keypoint Detection Using Haar Cascades on a trained CNN: This project uses computer vision techniques and deep learning architectures to build a facial keypoint detection system that takes in any image with faces, and predicts the location of 68 distinguishing keypoints on each face
+Facial Keypoint Detection based off of NaimishNet Paper Using Haar Cascades on a trained CNN: This project uses computer vision techniques and deep learning architectures inspired by the NaimishNet Paper to build a facial keypoint detection system that takes in any image with faces, and predicts the location of 68 distinguishing keypoints on each face
 
  --------------------------------------------------------------
- 
+
+
+ #### Facial Key Points Detection using Deep Convolutional Neural Network - NaimishNet ####
+
+This key point detection network is more of a minimalistic, or inspired, version of NaimishNet. It contains reduced layers and complexity, for expedited training on a different test dataset, while still preseving better than expected results in a robust fashion.
+
+NaimishNet is a four layered neural network that is composed of [convolution] -> [activation function] -> [maxpooling] -> [dropout]. Input is the input layer. Activation's 1 to Activation 5 uses Exponential Linear Units (ELUs) as activation functions, whereas Activation 6 uses Linear Activation Function. Dropout probability is increased from 0.1 to 0.6 from Dropout 1 to Dropout 6, with a step size of 0.1. Maxpooling2d 1 to Maxpooling2d 4 use a pool shape of (2, 2), with non-overlapping strides and no zero padding. Flatten 1 flattens 3d input to 1d output. Convolution2d 1 to Convolution2d 4 do not use zero padding, have their weights initialized with random numbers drawn from uniform distribution, and the specifics of number of filters and filter shape are shown in table below. Dense 1 to Dense 3 are regular fully connected layers with weights initialized using Glorot uniform initialization. ADAM optimizer, with learning rate of 0.001, β1 of 0.9, β2 of 0.999 and ε of 1e−08, is used for minimizing Mean Squared Error (MSE). Paper: (https://arxiv.org/pdf/1710.00977.pdf)[https://arxiv.org/pdf/1710.00977.pdf]
+![](/app/facial-keypoint-detection/images/table.png)
+
+
  #### How HAAR Feature Detection works with CNNs ####
  
 Summary: HAAR Feature Detection is gradient measuments that look at rectangular regions. HAAR features detect patterns like edges lines and more complex rectangular patterns. The image below is an example of vertical, horizatonal and rectangle "HAAR Feature Detectors" or "HAAR Line Detectors":
