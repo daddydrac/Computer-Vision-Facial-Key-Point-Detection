@@ -1,6 +1,10 @@
 ## Computer Vision: Facial Key Point Detection ##
 Facial Keypoint Detection based off of NaimishNet Paper Using Haar Cascades on a trained CNN: This project uses computer vision techniques and deep learning architectures inspired by the NaimishNet Paper to build a facial keypoint detection system that takes in any image with faces, and predicts the location of 68 distinguishing keypoints on each face
 
+
+<p><em>Disclaimer:</em> The code has been refactored for accelerated GPU programming, in order to run you need NVIDIA GPUs.</p> 
+
+
  --------------------------------------------------------------
 
 

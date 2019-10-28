@@ -142,6 +142,7 @@ RUN cmake -DBUILD_TIFF=ON \
 		  -DWITH_CUDA=ON \
 		  -DENABLE_FAST_MATH=1 \
 		  -DCUDA_FAST_MATH=1 \
+                  -DCUDA_ARCH_BIN=6.1 \
 		  -DWITH_CUBLAS=1 \
 		  -DENABLE_AVX=ON \
 		  -DWITH_OPENGL=ON \

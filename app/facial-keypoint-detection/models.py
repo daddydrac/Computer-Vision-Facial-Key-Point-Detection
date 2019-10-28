@@ -39,7 +39,7 @@ class Net(nn.Module):
         #############################################
         
         
-                self.conv1 = nn.Sequential(
+        self.conv1 = nn.Sequential(
             # Layer 1
             nn.Conv2d(
                 in_channels=1, 
@@ -104,7 +104,7 @@ class Net(nn.Module):
         
         # Formula:     (W − F + 2P ) / S + 1
         
-        self.dropout = nn.Dropout(0.5)
+        self.dropout = nn.Dropout(0.6)
         
         self.fc1 = nn.Linear(43264, 512)
         self.fc2 = nn.Linear(512, 256)
@@ -115,6 +115,7 @@ class Net(nn.Module):
         I.xavier_uniform(self.fc3.weight.data)
         
     def forward(self, x):
+
         x = self.conv1(x)
         x = self.conv2(x)
         x = self.conv3(x)
@@ -123,6 +124,6 @@ class Net(nn.Module):
         x = self.dropout(F.relu(self.fc1(x)))
         x = self.dropout(F.relu(self.fc2(x)))
         x = self.fc3(x)
-        # a modified x, having gone through all the layers of your model, should be returned
+
         return x
 
