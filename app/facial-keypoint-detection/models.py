@@ -46,7 +46,7 @@ class Net(nn.Module):
                 out_channels=32, 
                 kernel_size=2,
             ),
-            nn.MaxPool2d(kernel_size=2, stride=2),
+            nn.MaxPool2d(kernel_size=5, stride=5),
             nn.BatchNorm2d(32),
             nn.ReLU(),
         )
@@ -70,7 +70,7 @@ class Net(nn.Module):
             ),
             nn.MaxPool2d(kernel_size=2, stride=2),
             nn.BatchNorm2d(128),
-            nn.ReLU(), 
+            nn.ReLU(),
         )
         self.conv4 = nn.Sequential(              
             # Layer 4
@@ -83,6 +83,7 @@ class Net(nn.Module):
             nn.BatchNorm2d(256),
             nn.ReLU(),
         )
+
         
         # Formula:     (W − F + 2*P ) / S + 1
         
@@ -106,20 +107,22 @@ class Net(nn.Module):
         
         self.dropout = nn.Dropout(0.6)
         
-        self.fc1 = nn.Linear(43264, 512)
+        self.fc1 = nn.Linear(4096*1*1, 512)
         self.fc2 = nn.Linear(512, 256)
-        self.fc3 = nn.Linear(256, 136) # output of 136 is suggested by instructions from Udacity
+        self.fc3 = nn.Linear(256, 136)
        
         I.xavier_uniform(self.fc1.weight.data)
         I.xavier_uniform(self.fc2.weight.data)
         I.xavier_uniform(self.fc3.weight.data)
         
     def forward(self, x):
-
+        
         x = self.conv1(x)
         x = self.conv2(x)
         x = self.conv3(x)
         x = self.conv4(x)
+
+        print(x.shape)
         x = x.view(x.size(0), -1)
         x = self.dropout(F.relu(self.fc1(x)))
         x = self.dropout(F.relu(self.fc2(x)))
