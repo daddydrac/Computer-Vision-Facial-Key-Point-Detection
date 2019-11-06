@@ -46,7 +46,7 @@ class Net(nn.Module):
                 out_channels=32, 
                 kernel_size=2,
             ),
-            nn.MaxPool2d(kernel_size=5, stride=5),
+            nn.MaxPool2d(kernel_size=3, stride=2),
             nn.BatchNorm2d(32),
             nn.ReLU(),
         )
@@ -57,7 +57,7 @@ class Net(nn.Module):
                 out_channels=64,
                 kernel_size=2, 
             ),
-            nn.MaxPool2d(kernel_size=2, stride=2),
+            nn.MaxPool2d(kernel_size=4, stride=3),
             nn.BatchNorm2d(64),
             nn.ReLU(),
         )
@@ -68,7 +68,7 @@ class Net(nn.Module):
                 out_channels=128,
                 kernel_size=2, 
             ),
-            nn.MaxPool2d(kernel_size=2, stride=2),
+            nn.MaxPool2d(kernel_size=3, stride=3),
             nn.BatchNorm2d(128),
             nn.ReLU(),
         )
@@ -79,7 +79,7 @@ class Net(nn.Module):
                 out_channels=256,
                 kernel_size=2, 
             ),
-            nn.MaxPool2d(kernel_size=2, stride=2),
+            nn.MaxPool2d(kernel_size=6, stride=3),
             nn.BatchNorm2d(256),
             nn.ReLU(),
         )
@@ -107,7 +107,7 @@ class Net(nn.Module):
         
         self.dropout = nn.Dropout(0.6)
         
-        self.fc1 = nn.Linear(4096*1*1, 512)
+        self.fc1 = nn.Linear(1024*1*1, 512)
         self.fc2 = nn.Linear(512, 256)
         self.fc3 = nn.Linear(256, 136)
        
